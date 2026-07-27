@@ -1,6 +1,6 @@
 # CarDekho Used Car Price Prediction using Regression Models
 
-# Business Objective
+## Business Objective
 
 The main objective of this project is to develop a machine learning model that can accurately predict the selling price of used cars based on various features such as vehicle age, kilometers driven, fuel type, transmission type, engine specifications, and other vehicle details.
 
@@ -21,7 +21,7 @@ Number of features after preprocessing: 284
 
 The dataset contains both numerical and categorical features.
 
-# Features and Target Variable
+## Features and Target Variable
 
 Target Variable
 
@@ -47,7 +47,7 @@ Categorical Features:
 - fuel_type
 - transmission_type
 
-# Data Preprocessing
+## Data Preprocessing
 
 The following preprocessing techniques were applied:
 
@@ -58,7 +58,7 @@ The following preprocessing techniques were applied:
 - Split the dataset into training and testing sets using an 80:20 ratio.
 - Applied Standard Scaling for Linear Regression.
 
-# Regression Models Implemented
+## Regression Models Implemented
 
 Three regression models were implemented and evaluated:
 
@@ -80,7 +80,7 @@ Model Performance Comparison
 | Random Forest Regressor | 95647.88 | 4.91 × 10¹⁰ | 221537.82 | 0.9348 |
 
 
-# Best Performing Model
+## Best Performing Model
 
 Random Forest Regressor
 
@@ -95,7 +95,7 @@ Justification:
 Random Forest performed better because it can capture complex relationships between car features and prices by combining multiple decision trees.
 
 
-# Key Observations
+## Key Observations
 
 - Random Forest significantly outperformed Linear Regression and Decision Tree models.
 - Tree-based algorithms performed better because used car prices depend on complex relationships between multiple features.
@@ -105,7 +105,7 @@ Random Forest performed better because it can capture complex relationships betw
 
 ---
 
-#  Future Improvements
+##  Future Improvements
 
 The model performance can be improved further by:
 
