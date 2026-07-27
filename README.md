@@ -1,11 +1,11 @@
-# CarDekho Used Car Price Prediction using Machine Learning
+## CarDekho Used Car Price Prediction using Machine Learning
 
-1. Business Objective
+### 1. Business Objective
 
 The main objective of this project is to develop a regression model that can accurately predict the selling price of a used car.
 This type of prediction can be useful for car sellers to estimate a suitable price for their vehicles and for buyers to understand whether a car is priced fairly based on its features.
 
-2. Dataset Overview
+### 2. Dataset Overview
 
 Dataset Name: CarDekho Used Car Dataset
 
@@ -16,7 +16,7 @@ After preprocessing, the dataset contained:
 - Type of problem: Regression
 - Target variable: selling_price
 
-3. Features and Target Variable
+### 3. Features and Target Variable
 
 Target Variable:
 selling_price
@@ -38,7 +38,7 @@ Categorical Features:
 - fuel_type
 - transmission_type
 
-4. Data Preprocessing
+### 4. Data Preprocessing
 
 Before training the models, the dataset was prepared using the following steps:
 
@@ -48,7 +48,7 @@ Before training the models, the dataset was prepared using the following steps:
 - Split the dataset into training and testing data using an 80:20 ratio.
 - Applied feature scaling for Linear Regression because it performs better when features have similar ranges.
 
-5. Regression Models Implemented
+### 5. Regression Models Implemented
 
 I trained and compared three different regression models:
 
@@ -64,7 +64,7 @@ c. Random Forest Regressor
 
 Random Forest Regressor is an ensemble learning algorithm that combines multiple decision trees to improve prediction accuracy and reduce overfitting.
 
-6. Model Performance Comparison
+### 6. Model Performance Comparison
    
 a. Linear Regression
 - MAE: 179670.54
@@ -81,7 +81,7 @@ c. Random Forest Regressor
 
 Among all models, Random Forest Regressor achieved the best results.
 
-7. Final Model Selection
+### 7. Final Model Selection
 
 Based on the evaluation results, Random Forest Regressor was selected as the best-performing model.
 
@@ -91,14 +91,14 @@ The reasons for selecting Random Forest are:
 - It had the lowest MAE value 95647.88, which means the prediction errors were lower compared to other models.
 - It achieved the lowest RMSE value 221537.82.
 
-8. Key Observations
+### 8. Key Observations
 
 - Random Forest performed better than Linear Regression and Decision Tree models.
 - Tree-based models were able to understand the relationship between car features and selling prices better.
 - Linear Regression had lower performance because car prices depend on many complex factors and are not completely linear.
 - Features such as vehicle age, brand, mileage, engine specifications, and kilometers driven have an impact on car prices.
 
-9. Future Improvements
+### 9. Future Improvements
 
 The model performance can be improved further by:
 
