@@ -108,5 +108,5 @@ b. Testing advanced machine learning algorithms such as XGBoost, LightGBM, or Gr
 
 c. Performing more feature engineering to create additional useful features.
 
-4. Using cross-validation techniques for better model evaluation.
+d. Using cross-validation techniques for better model evaluation.
 
