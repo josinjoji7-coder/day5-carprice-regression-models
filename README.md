@@ -1,36 +1,28 @@
-# CarDekho Used Car Price Prediction using Regression Models
+# CarDekho Used Car Price Prediction using Machine Learning
 
-## Business Objective
+## 1. Business Objective
 
-The main objective of this project is to develop a machine learning model that can accurately predict the selling price of used cars based on various features such as vehicle age, kilometers driven, fuel type, transmission type, engine specifications, and other vehicle details.
+The main objective of this project is to develop a regression model that can accurately predict the selling price of a used car.
+This type of prediction can be useful for car sellers to estimate a suitable price for their vehicles and for buyers to understand whether a car is priced fairly based on its features.
 
-Accurate price prediction can help:
-- Sellers estimate a reasonable selling price.
-- Buyers make better purchasing decisions.
-- Businesses improve used car pricing strategies.
-
-# Dataset Overview
+## 2. Dataset Overview
 
 Dataset Name: CarDekho Used Car Dataset
 
-The dataset contains information about used cars including their specifications, usage details, and selling prices.
+The dataset contains information about used cars along with their selling prices. It includes different features related to cars such as brand, model, vehicle age, kilometers driven, fuel type, transmission type, engine, mileage, and other specifications.
 
-Number of records: 15,411
+After preprocessing, the dataset contained:
+- Number of records: 15,411
+- Type of problem: Regression
+- Target variable: selling_price
+- 
+## 3. Features and Target Variable
 
-Number of features after preprocessing: 284
+Target Variable:
+selling_price
 
-The dataset contains both numerical and categorical features.
-
-## Features and Target Variable
-
-Target Variable
-
-| Feature | Description |
-
-| selling_price | The price at which the used car is sold |
-
-Input Features
-
+The model predicts the selling price of the used car.
+Features Used
 Numerical Features:
 - vehicle_age
 - km_driven
@@ -38,7 +30,6 @@ Numerical Features:
 - engine
 - max_power
 - seats
-
 Categorical Features:
 - car_name
 - brand
@@ -47,83 +38,74 @@ Categorical Features:
 - fuel_type
 - transmission_type
 
-## Data Preprocessing
+## 4. Data Preprocessing
 
-The following preprocessing techniques were applied:
+Before training the models, the dataset was prepared using the following steps:
 
-- Removed the `Unnamed: 0` column as it was only an index column.
-- Checked and handled missing values.
-- Removed duplicate records.
-- Used One-Hot Encoding for categorical variables.
-- Split the dataset into training and testing sets using an 80:20 ratio.
-- Applied Standard Scaling for Linear Regression.
+- Removed the unnecessary `Unnamed: 0` column because it was only an index column.
+- Checked for missing values and duplicate records.
+- Used One-Hot Encoding to convert categorical features into numerical format.
+- Split the dataset into training and testing data using an 80:20 ratio.
+- Applied feature scaling for Linear Regression because it performs better when features have similar ranges.
 
-## Regression Models Implemented
+## 5. Regression Models Implemented
 
-Three regression models were implemented and evaluated:
+I trained and compared three different regression models:
 
- 1. Linear Regression
-- A simple regression algorithm used to model linear relationships between features and target values.
+1. Linear Regression
 
- 2. Decision Tree Regressor
-- A tree-based model capable of capturing non-linear relationships in data.
+Linear Regression is a basic regression algorithm that is used to find relationships between input features and the target value.
 
- 3. Random Forest Regressor
-- An ensemble learning method that combines multiple decision trees to improve accuracy and reduce overfitting.
+2. Decision Tree Regressor
 
-Model Performance Comparison
+Decision Tree Regressor is a tree-based algorithm that can handle non-linear relationships between features.
+
+3. Random Forest Regressor
+
+Random Forest Regressor is an ensemble learning algorithm that combines multiple decision trees to improve prediction accuracy and reduce overfitting.
+
+## 6. Model Performance Comparison
+
+The models were evaluated using the following metrics:
+
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- R² Score
+
 
 | Model | MAE | MSE | RMSE | R² Score |
+|---|---|---|---|---|
+| Linear Regression | 179670.54 | 1.58e+11 | 397974.01 | 0.7896 |
+| Decision Tree Regressor | 126287.34 | 9.43e+10 | 307069.02 | 0.8747 |
+| Random Forest Regressor | 95647.88 | 4.91e+10 | 221537.82 | 0.9348 |
 
-| Linear Regression | 179670.54 | 1.58 × 10¹¹ | 397974.01 | 0.7896 |
-| Decision Tree Regressor | 126287.34 | 9.43 × 10¹⁰ | 307069.02 | 0.8747 |
-| Random Forest Regressor | 95647.88 | 4.91 × 10¹⁰ | 221537.82 | 0.9348 |
-
-
-## Best Performing Model
-
-Random Forest Regressor
+## 7. Final Model Selection
 
 Based on the evaluation results, **Random Forest Regressor** was selected as the best-performing model.
 
-Justification:
+The reasons for selecting Random Forest are:
 
-- Achieved the highest R² score of **0.9348**, meaning it explains approximately 93.48% of the variation in selling prices.
-- Obtained the lowest MAE value (**95,647.88**), indicating lower average prediction errors.
-- Achieved the lowest RMSE value (**221,537.82**), showing better performance in handling large prediction errors.
+- It achieved the highest R² score of 0.9348.
+- It had the lowest MAE value 95647.88, which means the prediction errors were lower compared to other models.
+- It achieved the lowest RMSE value 221537.82.
 
-Random Forest performed better because it can capture complex relationships between car features and prices by combining multiple decision trees.
+## 8. Key Observations
 
+- Random Forest performed better than Linear Regression and Decision Tree models.
+- Tree-based models were able to understand the relationship between car features and selling prices better.
+- Linear Regression had lower performance because car prices depend on many complex factors and are not completely linear.
+- Features such as vehicle age, brand, mileage, engine specifications, and kilometers driven have an impact on car prices.
 
-## Key Observations
-
-- Random Forest significantly outperformed Linear Regression and Decision Tree models.
-- Tree-based algorithms performed better because used car prices depend on complex relationships between multiple features.
-- Vehicle characteristics such as age, mileage, engine specifications, and brand information strongly influence selling prices.
-- Linear Regression showed lower performance because it assumes a linear relationship between input features and target price.
-- One-Hot Encoding helped convert categorical vehicle information into a format suitable for machine learning models.
-
----
-
-##  Future Improvements
+## 9. Future Improvements
 
 The model performance can be improved further by:
 
-1. Hyperparameter Optimization
-   - Use GridSearchCV or RandomizedSearchCV to find the optimal parameters for Random Forest and other models.
+1. Applying hyperparameter tuning techniques like GridSearchCV or RandomizedSearchCV to find the best model parameters.
 
-2. Testing Advanced Algorithms
-   - Experiment with advanced regression algorithms such as:
-     - XGBoost
-     - LightGBM
-     - Gradient Boosting Regressor
+2. Testing advanced machine learning algorithms such as XGBoost, LightGBM, or Gradient Boosting.
 
-3. Improved Feature Engineering
-   - Create additional features based on car specifications.
-   - Analyze feature importance and remove less useful features.
+3. Performing more feature engineering to create additional useful features.
 
-4. Outlier Detection
-   - Identify and handle extreme values in numerical features to improve prediction accuracy.
+4. Using cross-validation techniques for better model evaluation.
 
-5. Cross Validation
-   - Use cross-validation techniques for more reliable model evaluation.
